@@ -6,7 +6,6 @@ import Contact from "./components/Contact";
 import Galerie from "./components/Galerie";
 import Home from "./components/Home";
 import Tarifs from "./components/Tarifs";
-import LayoutG from "./components/Galerie/layoutG";
 import Layout from "./UI/Layout";
 
 export default function App() {

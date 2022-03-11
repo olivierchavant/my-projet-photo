@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import { Carousel, Row, Col } from 'react-bootstrap';
+import { Carousel} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from "./pictures1.jpg"
 import img2 from "./pictures2.jpg"
