@@ -4,42 +4,39 @@ import Footer from "../components/Footer";
 import GlobalStyle from "./GlobalStyle";
 import backgroundImmage from "../components/Home/forest.jpg"; 
 
-
 export default function Layout ({children}) { 
   
     return ( 
         
         <Wrapper> 
+            
             <GlobalStyle/>
-            <Header />
+             <Header /> 
+          
                 <Main> 
                     {children}
                 </Main>
-            <Footer /> 
+              
+     
+            <Footer />
            
+            
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div `
-
 background-Image: url(${backgroundImmage}); 
 background-position: 'center'  ; 
 background-size: 100%; 
 background-repeat: 'no-reapeat' ; 
+    ` 
 
-
-
-    ` ; 
-
-const Main = styled.div`
-min-height: calc(100vh - 220px); 
-width : 100% ; 
-max-width : auto;
+const Main = styled.div`min-height: calc(100vh - 200px); 
+width : 90% ; 
+max-width : auto;   
 margin: auto;  
 display: flex ; 
 justify-content: center; 
-
-; 
 
 `

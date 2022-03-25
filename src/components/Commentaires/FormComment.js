@@ -1,16 +1,14 @@
-
 import styled from "styled-components";
 import { useState, } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col,Form,Row,Button,InputGroup, Container,  } from "react-bootstrap";
-import axios from "axios";
-import { API_POST } from "../../Config";
-import { Redirect } from "react-router-dom";
+import commentAPI from "../hooks/commentAPI";
 
-export default function Contact() {
+
+const FormComment = ({id}) => {
 
   const [validated, setValidated] = useState(false);
-  const [verifSubmit, setVerifSubmit] = useState(false); 
+  
 
   const handleSubmit = async (event) => {
    
@@ -23,38 +21,33 @@ export default function Contact() {
 
     if (form.checkValidity() === true) { 
       event.preventDefault();
-      try { 
-            await axios.post(API_POST, content)
-            .then(function (res) { 
-              console.log(res.status)
-              if (res.status === 200) { 
-                console.log ("yes 200"); 
-                form.reset() ;
-              setVerifSubmit(true) }
-             
-            }); 
-            } catch (error) { console.log (error) } 
+      try {       
+        commentAPI(req,form)
+        } catch (error) { console.log (error)} 
     } ; 
   }; 
-
 
   const [content, setContent] = useState({})
 
     const handleChange = (event) => {
     const { name  , value} = event.currentTarget; 
     setContent({
+        galerie: {id} ,
       ...content, 
       [name]: value, 
     }) 
    
   }; 
-  if (verifSubmit) { 
-    return <Redirect to="/ok"/>
-    }
+ const req = { 
+     data:  content
+ }
+
+
 
   return (
     <Wrapper>
-      <h2>Contactez Moi...... </h2>
+      <h2>  </h2>
+
       <Container  fluide > 
           <Form noValidate validated={validated} onSubmit={handleSubmit} 
              >
@@ -65,39 +58,11 @@ export default function Contact() {
                   required
                   type="text"
                   placeholder="Votre prénom"
-                  name="Prénom"
+                  name="prenom"
                   onChange={handleChange}
                 
                 />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustom02">
-                <Form.Label>Last name</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder=" Votre Nom"
-                  name="Nom"
-                  onChange={handleChange}
-                  
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-                <Form.Label>Adresse Mail</Form.Label>
-                <InputGroup hasValidation >
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    placeholder="name@example.com" 
-                    aria-describedby="inputGroupPrepend"
-                    onChange={handleChange}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Adresse Non Valide 
-                  </Form.Control.Feedback>
-                </InputGroup>
               </Form.Group>
             </Row>
             <Row>
@@ -128,7 +93,7 @@ export default function Contact() {
   );
 }
 
-
+export default FormComment 
 
 
 const Wrapper = styled.div`

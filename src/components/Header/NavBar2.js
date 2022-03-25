@@ -1,27 +1,24 @@
 import React from 'react'
-import { Container, Nav, Navbar, NavbarBrand  } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import logo from '../Header/logo.png';
 import { Link } from 'react-router-dom';
 
-<img className='logo' src={logo} alt='Charle Cantin' />
+
 export const NavBar2 = () => {
   return (
     <Wrapper> 
-    
-        <Navbar className='menu' variant= 'dark' expand="lg">
+        
+        <Navbar expand="lg">
+        <h3> Charles Cantin </h3>  
         <Container >
-            <NavbarBrand>
-            <img className='logo' src={logo} alt='Charle Cantin' />
-            </NavbarBrand>
-
+        
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="m-auto">
+            <Navbar.Collapse id="basic-navbar-nav ">
+            <Nav className="m-auto ">
                 <Nav.Link className='items' as={Link} to = {'/'}>Home</Nav.Link>
-                <Nav.Link className='items' as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
-                <Nav.Link className='items' as={Link} to = {'/galerie'}>Galerie</Nav.Link>
+                <Nav.Link className='items ' as={Link} to = {'/galerie'}>Galerie</Nav.Link>
+                <Nav.Link className='items ' as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
 
             </Nav>
             <Nav>
@@ -36,9 +33,13 @@ export const NavBar2 = () => {
 }
 const Wrapper = styled.div`
 
-a { font-size: 22px;
-    color:#03506f   }
+& a { font-size: 24px;
+    font-weight: bold ; 
+    }
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 
+h3 { text-align: center ;
+    margin-left: 20px }
 
- 
 `

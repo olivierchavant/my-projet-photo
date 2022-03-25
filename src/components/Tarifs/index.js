@@ -1,14 +1,19 @@
 
 import styled from "styled-components";
-import { Table  } from 'react-bootstrap';
+import { Table , Container, Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { listeTarifs } from "../Tarifs/listeTarifs";
+import useFetch from "../hooks/useFetch"; 
 
 
 
 export default function Tarifs() {
+
+  const {isLoading, posts} = useFetch("http://localhost:1337/api/tarifs") 
+
   return (
     <Wrapper>
+      <h2>Tarifs </h2>
+      <Container fluide="true" > 
     <Table striped bordered hover>
       <thead>
         <tr>
@@ -17,25 +22,39 @@ export default function Tarifs() {
           <th>Montant</th>
         </tr>
       </thead>
-    {listeTarifs.map( tarif =>(        
-      <tbody>
-        <tr key={tarif.id}>
-          
-          <td>{tarif.title}</td>
-          <td>{tarif.Description}</td>
-          <td>{tarif.Montant}</td>
+              {isLoading ? <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+            </Spinner>:   posts.data.map( tarif =>(        
+      <tbody key={tarif.id}>
+        <tr >
+          <td>{tarif.attributes.title}</td>
+          <td>{tarif.attributes.description}</td>
+          <td>{tarif.attributes.montant}</td>
         </tr>
       </tbody> ))}
     </Table>
+    </Container>
 </Wrapper>
 )
 }
 
 const Wrapper = styled.div`
-height: 50%;
-width: 70%;
-display: flex;  
-justify-content: center; 
-align-items: center;  
-padding: 60px; 
-` ; 
+
+padding-top: 25px; 
+h2 {  
+  text-align: center;
+margin-bottom: 50px;  }
+
+th {color:#03506f ; }
+
+table { 
+
+ 
+-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+background: white;  }
+
+.container { 
+  padding-top: 100px ; 
+}
+` 

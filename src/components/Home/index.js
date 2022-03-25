@@ -1,17 +1,25 @@
+import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 export default function Home() {
   return (
     <Wrapper>
-        <h1>Charles Cantin</h1>
+      <Container fluide= "true" > 
+      <Row > 
+        <h1>Charles Cantin - Photographe</h1>
+        </Row>
+        </Container>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-height: 80vh;
-width: 100%;
+
 display: flex;  
 justify-content: center;
-align-items: center;  
-padding: 60px; 
- ` ; 
+align-items: center; 
+padding-bottom: 50px; 
+h1 {  
+  text-align: center;
+ }
+
+ ` 

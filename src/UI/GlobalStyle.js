@@ -12,11 +12,11 @@ body {
     font-size: large;
 }
 
-h1, h2 { 
+h1, h2, h3 { 
     color:#03506f ; 
 }
 
-
+button { background: #03506f }
 `
 
 export default GlobalStyle; 

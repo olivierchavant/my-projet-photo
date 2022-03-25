@@ -1,4 +1,13 @@
-x { justify-content: space-between;}
+x { justify-content: space-between;
+text-decoration: none;
+
+justify-self: auto;
+display:list-item;
+font-weight: bold;
+color: aquamarine;
+align-content: center;
+}
+
 
 
     
