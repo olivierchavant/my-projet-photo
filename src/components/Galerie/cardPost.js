@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export const cardPost = () => {
 
-  const {isLoading, posts} = UseFetch("http://localhost:1337/api/galeries?populate=*") 
+  const {isLoading, posts} = UseFetch(`${API_URL}/api/galeries?populate=*`) 
 
   return (
     <Wrapper> 
@@ -20,7 +20,7 @@ export const cardPost = () => {
             </Spinner>
              :   posts.data.map( card => 
           <Card   key={card.id}>
-            <Card.Img variant="top" src={ API_URL + card.attributes.photo.data[0].attributes.formats.thumbnail.url} />
+            <Card.Img variant="top" src={ API_URL + card.attributes.image.data[0].attributes.formats.thumbnail.url} />
             <Card.Body > 
               <Card.Title>{card.attributes.title} </Card.Title>
               <Link to={`/galerie/post/${card.id}`}> <Button >En voir Plus.....</Button>   </Link>   

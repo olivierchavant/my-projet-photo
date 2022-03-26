@@ -3,12 +3,13 @@ import styled from "styled-components";
 import { Table , Container, Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useFetch from "../hooks/useFetch"; 
+import { API_URL } from "../../Config";
 
 
 
 export default function Tarifs() {
 
-  const {isLoading, posts} = useFetch("http://localhost:1337/api/tarifs") 
+  const {isLoading, posts} = useFetch(`${API_URL}/api/tarifs`) 
 
   return (
     <Wrapper>
@@ -29,7 +30,7 @@ export default function Tarifs() {
         <tr >
           <td>{tarif.attributes.title}</td>
           <td>{tarif.attributes.description}</td>
-          <td>{tarif.attributes.montant}</td>
+          <td>{tarif.attributes.tarif}</td>
         </tr>
       </tbody> ))}
     </Table>

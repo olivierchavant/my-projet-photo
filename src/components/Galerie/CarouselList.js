@@ -6,13 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { API_URL } from "../../Config";
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
+
+
+
 export default function CarouselList() {
 
     const {id} = useParams()
 
     useEffect(() => { console.log(id)} )
 
-    const {isLoading, posts    } = useFetch(`http://localhost:1337/api/galeries/${id}?populate=*` ) 
+    const {isLoading, posts    } = useFetch(`${API_URL}/api/galeries/${id}?populate=*` ) 
 
   return (
        <Wrapper> 
@@ -22,7 +25,7 @@ export default function CarouselList() {
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
-             : posts.data.attributes.photo.data.map( post => 
+             : posts.data.attributes.image.data.map( post => 
                 <Carousel.Item key={post.id}>
                   <img 
                     className="d-block w-100"
