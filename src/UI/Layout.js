@@ -26,14 +26,15 @@ export default function Layout ({children}) {
 }
 
 const Wrapper = styled.div `
-background-Image: url(${backgroundImmage}); 
+. { background-Image: url(${backgroundImmage}); 
 background-position: 'center'  ; 
 background-size: 100%; 
-background-repeat: 'no-reapeat' ; 
+background-repeat: 'no-reapeat' ; } 
     ` 
 
-const Main = styled.div`min-height: calc(100vh - 200px); 
-width : 90% ; 
+const Main = styled.div`min-height: calc(100vh - 210px); 
+ 
+width : 100% ; 
 max-width : auto;   
 margin: auto;  
 display: flex ; 

@@ -24,7 +24,6 @@ display: flex;
 height:  auto;   
 
 
-
 .twitter { font-size: 25px ; 
      }
 
