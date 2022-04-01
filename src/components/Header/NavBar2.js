@@ -6,16 +6,18 @@ import { Link } from 'react-router-dom';
 
 
 export const NavBar2 = () => {
+
+
   return (
     <Wrapper> 
         
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect="false"  expand="lg" bg="dark" variant="dark">
        
         <Container >
         <Navbar.Brand >Charles Cantin</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="m-auto ">
+                <Nav className="me-auto ">
                     <Nav.Link  as={Link} to = {'/'}>Accueil</Nav.Link>
                     <Nav.Link  as={Link} to = {'/galerie'}>Galerie</Nav.Link>
                     <Nav.Link  as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
