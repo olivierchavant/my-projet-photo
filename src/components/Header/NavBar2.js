@@ -12,7 +12,7 @@ export const NavBar2 = () => {
   return (
     <Wrapper> 
         
-        <Navbar collapseOnSelect="false"  expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect="false"  expand="lg" variant="dark">
        
         <Container >
         <Navbar.Brand >Charles Cantin</Navbar.Brand>
@@ -44,5 +44,6 @@ const Wrapper = styled.div`
 
 h3 { text-align: center ;
     margin-left: 20px }
+    .Navbar { background: black; }
 
 `
