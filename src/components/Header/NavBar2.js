@@ -17,7 +17,7 @@ export const NavBar2 = () => {
         <Navbar.Brand >Charles Cantin</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto ">
+                <Nav className="m-auto ">
                     <Nav.Link  as={Link} to = {'/'}>Accueil</Nav.Link>
                     <Nav.Link  as={Link} to = {'/galerie'}>Galerie</Nav.Link>
                     <Nav.Link  as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
