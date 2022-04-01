@@ -15,7 +15,7 @@ export const NavBar2 = () => {
         <Navbar collapseOnSelect="false"  expand="lg" variant="dark">
        
         <Container >
-        <Navbar.Brand >Charles Cantin</Navbar.Brand>
+        <Navbar.Brand as={Link} to = {'/'}>Charles Cantin</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="m-auto ">
