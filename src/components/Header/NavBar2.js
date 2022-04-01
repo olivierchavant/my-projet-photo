@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar,  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -9,21 +9,21 @@ export const NavBar2 = () => {
   return (
     <Wrapper> 
         
-        <Navbar expand="lg">
-        <h3> Charles Cantin </h3>  
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+       
         <Container >
-        
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav ">
-            <Nav className="m-auto ">
-                <Nav.Link  className='items' as={Link} to = {'/'}>Home</Nav.Link>
-                <Nav.Link className='items ' as={Link} to = {'/galerie'}>Galerie</Nav.Link>
-                <Nav.Link className='items ' as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
+        <Navbar.Brand >Charles Cantin</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="m-auto ">
+                    <Nav.Link  as={Link} to = {'/'}>Accueil</Nav.Link>
+                    <Nav.Link  as={Link} to = {'/galerie'}>Galerie</Nav.Link>
+                    <Nav.Link  as={Link} to = {'/tarifs'}>Tarifs</Nav.Link>
 
-            </Nav>
-            <Nav>
-                <Nav.Link className='items d-flex' as={Link} to = {'/contact'}>Contact</Nav.Link>
-            </Nav>
+                </Nav>
+                <Nav>
+                    <Nav.Link className='items d-flex' as={Link} to = {'/contact'}>Contact</Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Container>
         </Navbar>

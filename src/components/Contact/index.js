@@ -137,9 +137,11 @@ padding-top: 25px;
 h2 {  
   text-align: center;
 margin-bottom: 50px;  }
+
+@media screen and (min-width: 1280px) { 
 .container { 
   padding-top: 100px ; 
-}
+}} 
 button { margin-top: 20px; 
   background: #03506f; 
   width: 200px; }

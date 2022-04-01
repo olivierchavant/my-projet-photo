@@ -14,7 +14,7 @@ export const cardPost = () => {
     <Wrapper> 
         <Container fluide='true'> 
         <h2> Ma galerie....  </h2>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-center">
          {isLoading ?  <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
             </Spinner>

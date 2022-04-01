@@ -52,6 +52,7 @@ display: flex;
 margin-top: 90px; 
 align-items: center; 
 flex-direction: column;
+height: 70vh ;
 button { margin-top: 20px; 
   background: #03506f; 
   width: 200px; }

@@ -55,7 +55,8 @@ table {
 box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 background: white;  }
 
+@media screen and (min-width: 1280px) { 
 .container { 
   padding-top: 100px ; 
-}
+}}
 ` 
