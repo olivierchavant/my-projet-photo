@@ -29,7 +29,7 @@ export default function CarouselList() {
                 <Carousel.Item key={post.id}>
                   <img 
                     className="d-block w-100"
-                    src= { API_URL + post.attributes.formats.medium.url}
+                    src= { post.attributes.formats.medium.url}
                     alt="First slide"
                   />
                   <Carousel.Caption>

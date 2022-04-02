@@ -20,7 +20,7 @@ export const cardPost = () => {
             </Spinner>
              :   posts.data.map( card => 
           <Card   key={card.id}>
-            <Card.Img variant="top" src={ API_URL + card.attributes.image.data[0].attributes.formats.thumbnail.url} />
+            <Card.Img variant="top" src={ card.attributes.image.data[0].attributes.formats.thumbnail.url} />
             <Card.Body > 
               <Card.Title>{card.attributes.title} </Card.Title>
               <Link to={`/galerie/post/${card.id}`}> <Button >En voir Plus.....</Button>   </Link>   
