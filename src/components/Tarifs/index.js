@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import { Table , Container, Spinner } from 'react-bootstrap';
+import { Table , Container, Spinner,Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useFetch from "../hooks/useFetch"; 
 import { API_URL } from "../../Config";
@@ -25,14 +25,17 @@ export default function Tarifs() {
       </thead>
               {isLoading ? <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
-            </Spinner>:   posts.data.map( tarif =>(        
+            </Spinner>:   posts.data.map( tarif =>(   
+             
       <tbody key={tarif.id}>
         <tr >
           <td>{tarif.attributes.title}</td>
           <td>{tarif.attributes.description}</td>
           <td>{tarif.attributes.tarif}</td>
         </tr>
-      </tbody> ))}
+      </tbody> 
+        
+      ))}
     </Table>
     </Container>
 </Wrapper>
@@ -46,14 +49,19 @@ h2 {
   text-align: center;
 margin-bottom: 50px;  }
 
-th {color:#03506f ; }
+th , tr {
+  color:  white;
+  text-align: center }
+ 
+.icon { text-align: center }
 
 table { 
-
- 
--webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-background: white;  }
+  & a { font-size: 24px;
+    font-weight: bold ; 
+    text-decoration: none;
+    color: white;
+    }
+  background: #44575f ;  }
 
 @media screen and (min-width: 1280px) { 
 .container { 

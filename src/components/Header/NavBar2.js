@@ -36,6 +36,8 @@ export const NavBar2 = () => {
 }
 const Wrapper = styled.div`
 
+.navbar-dark .navbar-brand  { color: #44575f} 
+
 & a { font-size: 24px;
     font-weight: bold ; 
     }

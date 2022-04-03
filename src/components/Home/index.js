@@ -19,9 +19,13 @@ display: flex;
 justify-content: center;
 align-items: center; 
 padding-bottom: 50px; 
-h1 {  
+h1 {  padding: 20px;
+  border-radius: 20px;
   text-align: center;
+  background: #44575f ;
+  opacity: 1;
  }
+ 
  @media screen and (min-width: 1280px) { height:75vh}
 ` 
 

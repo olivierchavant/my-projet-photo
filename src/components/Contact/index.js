@@ -2,12 +2,18 @@
 import styled from "styled-components";
 import { useState, } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col,Form,Row,Button,InputGroup, Container,  } from "react-bootstrap";
+import { Col,Form,Row,Button,InputGroup, Container,Spinner  } from "react-bootstrap";
 import axios from "axios";
 import { API_POST } from "../../Config";
 import { Redirect } from "react-router-dom";
+import { API_URL } from "../../Config";
+import useFetch from "../hooks/useFetch"; 
+
+
 
 export default function Contact() {
+  const {isLoading, posts} = useFetch(`${API_URL}/api/tarifs`) 
+
 
   const [validated, setValidated] = useState(false);
   const [verifSubmit, setVerifSubmit] = useState(false); 
@@ -46,11 +52,13 @@ export default function Contact() {
       ...content, 
       [name]: value, 
     }) 
+    console.log(content)
    
   }; 
   if (verifSubmit) { 
     return <Redirect to="/ok"/>
     }
+
 
   return (
     <Wrapper>
@@ -89,7 +97,7 @@ export default function Contact() {
                   <Form.Control
                     type="email"
                     name="email"
-                    placeholder="name@example.com" 
+                    placeholder="nom@example.com" 
                     aria-describedby="inputGroupPrepend"
                     onChange={handleChange}
                     required
@@ -99,6 +107,25 @@ export default function Contact() {
                   </Form.Control.Feedback>
                 </InputGroup>
               </Form.Group>
+            </Row>
+            <Row>
+            <Form.Group className="mb-3" controlId="validationChoix" >
+            <Form.Label>quelle formule vous intéresse </Form.Label> 
+              <Form.Select aria-label="Default select example" 
+              name="formule" 
+              onChange={handleChange}> 
+                    <option>choisissez votre formule </option>
+                  {isLoading ? <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                  </Spinner>:   posts.data.map( tarif =>(
+                   
+                    <> 
+                    
+                    <option key={tarif.id}>{tarif.attributes.title}</option> 
+                    </>
+                    ))}
+              </Form.Select> 
+            </Form.Group>
             </Row>
             <Row>
             <Form.Group as={Col} md="12" controlId="floatingTextarea2">
@@ -119,7 +146,7 @@ export default function Contact() {
                 </InputGroup>
               </Form.Group>
             </Row>
-            <Row className="center"> <Button type="submit">Envoyer </Button> </Row>
+            <Row className="center"> <Button type="submit" variant="secondary" >Envoyer </Button> </Row>
             
           
           </Form>
@@ -143,10 +170,12 @@ margin-bottom: 50px;  }
   padding-top: 100px ; 
 }} 
 button { margin-top: 20px; 
-  background: #03506f; 
+  background:  #44575f ; 
+   
   width: 200px; }
 
 .center { padding-top: 30px;  justify-content: center; 
 }
+.form-label { color: #44575f  }
 
  ` 

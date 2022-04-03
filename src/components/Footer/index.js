@@ -26,10 +26,16 @@ display: flex;
 
 img { height: 100% ; width: 100% ; }
 
-.twitter { font-size: 25px ; 
+.twitter { 
+  font-size: 25px ; 
+  color: white ;
+  cursor : pointer;
      }
+  
 
-.faceBook { font-size: 25px }
+.faceBook { font-size: 25px ;
+   color: white ; 
+  cursor : pointer; }
 
 @media screen and (min-width: 1280px) { 
 

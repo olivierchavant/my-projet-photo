@@ -39,7 +39,7 @@ export default function CarouselList() {
             </Carousel>
           </Container>
           <Link className ="justify-content-md-center" to={`/galerie/`}>
-               <Button >Retour Galerie</Button>
+               <Button variant="secondary"  >Retour Galerie</Button>
             </Link> 
         </Wrapper>
 
@@ -49,25 +49,25 @@ export default function CarouselList() {
 const Wrapper = styled.div`
 
 display: flex; 
+
 margin-top: 90px; 
 align-items: center; 
 flex-direction: column;
 height: 70vh ;
 button { margin-top: 20px; 
-  background: #03506f; 
+  background: #44575f; 
   width: 200px; }
 
-.carousel { 
-  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-}
+
 h2 {  
   text-align: center;
 margin-bottom: 40px;  }
 
-
+img {border-radius: 20px;}
 .carousel {
   position: relative;
+  
+
 }
 
 .carousel-inner {

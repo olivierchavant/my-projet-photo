@@ -23,7 +23,7 @@ export const cardPost = () => {
             <Card.Img variant="top" src={ card.attributes.image.data[0].attributes.formats.thumbnail.url} />
             <Card.Body > 
               <Card.Title>{card.attributes.title} </Card.Title>
-              <Link to={`/galerie/post/${card.id}`}> <Button >En voir Plus.....</Button>   </Link>   
+              <Link to={`/galerie/post/${card.id}`}> <Button variant="secondary"  >En voir Plus.....</Button>   </Link>   
             </Card.Body>
           </Card>) } 
         </Row>
@@ -38,20 +38,20 @@ padding-top: 25px;
 justify-content: center; 
 .card { margin: 20px;
 padding-top: 10px;
-color:#03506f ;
+color: white ;
 width: 18rem; 
+background: #44575f;
+border-radius: 10px;
 
 
 
--webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .card-body { margin: auto; 
  }
  .card-title { text-align: center;   }
 
 & button { 
-  background: #03506f; 
+  background:  #44575f ; 
  }
 
 

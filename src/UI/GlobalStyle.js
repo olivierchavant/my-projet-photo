@@ -18,7 +18,7 @@ h1, h2, h3 {
     color: aliceblue;; 
 }
 
-button { background: #03506f }
+button { background: #44575f }
 `
 
 export default GlobalStyle; 
