@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import { Table , Container, Spinner,Nav } from 'react-bootstrap';
+import { Table , Container, Spinner} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useFetch from "../hooks/useFetch"; 
 import { API_URL } from "../../Config";

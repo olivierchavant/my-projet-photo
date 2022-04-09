@@ -63,7 +63,7 @@ export default function Contact() {
   return (
     <Wrapper>
       <h2>Contactez Moi...... </h2>
-      <Container  fluide > 
+      <Container  fluide="true" > 
           <Form noValidate validated={validated} onSubmit={handleSubmit} 
              >
             <Row className="mb-3">  
